@@ -123,3 +123,15 @@ footer {
   text-decoration: none;
   color: #111;
 }
+
+.highlight-link {
+  color: #75f86f;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px dotted #75f86f;
+}
+
+.highlight-link:hover {
+  text-decoration: underline;
+  color: #75f86f;
+}
