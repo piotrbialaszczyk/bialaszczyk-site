@@ -1,6 +1,8 @@
 /* style.css */
 
-/* Global Reset and Defaults */
+/* ---------------------------
+   Global Reset & Defaults
+---------------------------- */
 *,
 *::before,
 *::after {
@@ -8,7 +10,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 html,
@@ -16,26 +18,26 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background: #fdfdfd;
+  color: #111;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.7;
 }
 
-/* Layout */
+/* ---------------------------
+   Layout
+---------------------------- */
 .page {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #111;
-  background: #fdfdfd;
 
   max-width: 40rem;
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
   border: 1px dashed #ccc;
-  box-sizing: border-box;
 }
 
 main {
@@ -48,12 +50,28 @@ main {
   flex-grow: 1;
 }
 
-/* Typography */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.column {
+  flex: 1;
+  min-width: 15.625rem;
+}
+
+/* ---------------------------
+   Typography & Elements
+---------------------------- */
 h1 {
   font-size: 1rem;
   font-weight: normal;
   text-align: left;
   margin-bottom: 1rem;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 
 h2 {
@@ -66,6 +84,7 @@ h2 {
 
 p {
   font-size: 0.9rem;
+  text-align: justify;
 }
 
 ul {
@@ -104,7 +123,9 @@ h2 a {
   text-decoration: none;
 }
 
-/* Utility Classes */
+/* ---------------------------
+   Utility Classes
+---------------------------- */
 .center {
   text-align: center;
 }
@@ -124,20 +145,9 @@ h2 a {
   padding-top: 2rem;
 }
 
-/* Grid */
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: center;
-}
-
-.column {
-  flex: 1;
-  min-width: 15.625rem;
-}
-
-/* Header & Footer */
+/* ---------------------------
+   Header & Footer
+---------------------------- */
 .site-header {
   text-align: center;
   margin-top: 3rem;
@@ -156,5 +166,36 @@ footer {
   text-align: center;
   color: #888;
   border-top: 1px solid #eee;
-  margin-top: 1rem;
+}
+
+footer p {
+  text-align: center;
+}
+
+/* ---------------------------
+   Dark Mode
+---------------------------- */
+body.dark-mode {
+  background-color: #1f1e25;
+  color: #fdfdfd;
+}
+
+body.dark-mode a {
+  color: #6dc2ff;
+}
+
+body.dark-mode footer {
+  color: #aaa;
+  border-top: 1px solid #aaa;
+}
+
+/* ---------------------------
+   Dark Mode Switch
+---------------------------- */
+.theme-toggle {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 0.9rem;
+  z-index: 999;
 }
