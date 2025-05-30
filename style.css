@@ -1,65 +1,59 @@
 /* style.css */
 
-html, body {
+/* Global Reset and Defaults */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
+/* Layout */
 .page {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
   font-family: 'Roboto', sans-serif;
-  background: #fdfdfd;
-  color: #111;
+  font-size: 1rem;
   line-height: 1.7;
-  font-size: 16px;
+  color: #111;
+  background: #fdfdfd;
 
-  max-width: 640px;
+  max-width: 40rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem 1rem; 
-  box-sizing: border-box;
+  padding: 1rem;
   border: 1px dashed #ccc;
+  box-sizing: border-box;
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   flex: 1;
 }
 
+.content {
+  flex-grow: 1;
+}
+
+/* Typography */
 h1 {
   font-size: 1rem;
+  font-weight: normal;
   text-align: left;
   margin-bottom: 1rem;
-  font-weight: normal;
-}
-
-.center {
-  text-align: center;
-}
-
-.left {
-  text-align: left;
-}
-
-.intro {
-  max-width: 600px;
-  margin: 0 auto 3rem auto;
-}
-
-.columns {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3rem;
-  justify-content: center;
-  
-}
-
-.column {
-  flex: 1;
-  min-width: 250px;
 }
 
 h2 {
@@ -70,10 +64,14 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+p {
+  font-size: 0.9rem;
+}
+
 ul {
   font-size: 0.9rem;
   list-style: none;
-  padding-left: 0rem;
+  padding-left: 0;
 }
 
 ul li::before {
@@ -88,33 +86,62 @@ a {
   text-decoration: none;
 }
 
-p {
-  font-size: 0.9rem;
-}
-
 a:hover {
   color: #01817f;
 }
 
+a.external-ai {
+  color: #75f86f;
+}
+
+a.external-strava {
+  color: #fc5200;
+}
+
+h2 a {
+  all: unset;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Utility Classes */
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.intro {
+  max-width: 37.5rem;
+  margin: 0 auto 3rem auto;
+}
+
 .back-link {
   text-align: left;
-  margin: 2rem 0;
-  font-size: 0.9rem;
+  margin-top: auto;
+  padding-top: 2rem;
 }
 
-footer {
-  font-size: 0.8rem;
-  text-align: center;
-  color: #888;
-  border-top: 1px solid #eee;
-  margin-top: 1rem;
+/* Grid */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
 }
 
+.column {
+  flex: 1;
+  min-width: 15.625rem;
+}
+
+/* Header & Footer */
 .site-header {
   text-align: center;
   margin-top: 3rem;
   margin-bottom: 3rem;
-
 }
 
 .site-title {
@@ -124,14 +151,10 @@ footer {
   color: #111;
 }
 
-.highlight-link {
-  color: #75f86f;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: 1px dotted #75f86f;
-}
-
-.highlight-link:hover {
-  text-decoration: underline;
-  color: #75f86f;
+footer {
+  font-size: 0.8rem;
+  text-align: center;
+  color: #888;
+  border-top: 1px solid #eee;
+  margin-top: 1rem;
 }
