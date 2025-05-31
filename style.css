@@ -166,6 +166,7 @@ footer {
   text-align: center;
   color: #888;
   border-top: 1px solid #eee;
+  background-color: inherit;
 }
 
 footer p {
@@ -185,8 +186,9 @@ body.dark-mode a {
 }
 
 body.dark-mode footer {
-  color: #aaa;
-  border-top: 1px solid #aaa;
+  color: #aaa !important;
+  border-top: 1px solid !important;
+  background-color: #1f1e25;
 }
 
 /* ---------------------------
