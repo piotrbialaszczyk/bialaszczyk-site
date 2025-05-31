@@ -181,6 +181,10 @@ body.dark-mode {
   color: #fdfdfd;
 }
 
+body.dark-mode .page {
+  background-color: #1f1e25;
+}
+
 body.dark-mode a {
   color: #6dc2ff;
 }
@@ -200,4 +204,9 @@ body.dark-mode footer {
   right: 0.5rem;
   font-size: 0.9rem;
   z-index: 999;
+
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1rem;
 }
