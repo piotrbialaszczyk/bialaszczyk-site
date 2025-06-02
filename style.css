@@ -181,6 +181,10 @@ body.dark-mode {
   color: #fdfdfd;
 }
 
+html.dark-mode {
+  background-color: #1f1e25;
+}
+
 body.dark-mode .page {
   background-color: #1f1e25;
 }
