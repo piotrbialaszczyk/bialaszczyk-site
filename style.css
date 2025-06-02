@@ -1,8 +1,6 @@
-/* style.css */
-
-/* ---------------------------
+/* ---------------------------------
    Global Reset & Defaults
----------------------------- */
+---------------------------------- */
 *,
 *::before,
 *::after {
@@ -18,26 +16,49 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #fdfdfd;
-  color: #111;
   font-family: 'Roboto', sans-serif;
   line-height: 1.7;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
-/* ---------------------------
+/* ---------------------------------
+   Theme Variables
+---------------------------------- */
+:root {
+  --bg: #fdfdfd;
+  --text: #111;
+  --link: #000;
+  --link-hover: #01817f;
+  --border: #ccc;
+  --footer: #888;
+  --footer-border: #eee;
+  --highlight-ai: #75f86f;
+  --highlight-strava: #fc5200;
+}
+
+[data-theme="dark"] {
+  --bg: #1f1e25;
+  --text: #fdfdfd;
+  --link: #6dc2ff;
+  --link-hover: #6dc2ff;
+  --border: #aaa;
+  --footer: #aaa;
+  --footer-border: #aaa;
+}
+
+/* ---------------------------------
    Layout
----------------------------- */
+---------------------------------- */
 .page {
   position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
   max-width: 40rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding: 1rem;
-  border: 1px dashed #ccc;
+  border: 1px dashed var(--border);
 }
 
 main {
@@ -62,22 +83,22 @@ main {
   min-width: 15.625rem;
 }
 
-/* ---------------------------
+/* ---------------------------------
    Typography & Elements
----------------------------- */
+---------------------------------- */
 h1 {
   font-size: 1rem;
   font-weight: normal;
   text-align: left;
   margin-bottom: 1rem;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid var(--footer-border);
+  border-bottom: 1px solid var(--footer-border);
 }
 
 h2 {
   font-size: 1rem;
   font-weight: normal;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.3rem;
   margin-bottom: 0.5rem;
 }
@@ -101,31 +122,32 @@ ul li::before {
 
 a {
   font-size: 0.9rem;
-  color: #000000;
+  color: var(--link);
   text-decoration: none;
 }
 
 a:hover {
-  color: #01817f;
+  color: var(--link-hover);
 }
 
 a.external-ai {
-  color: #75f86f;
+  color: var(--highlight-ai);
 }
 
 a.external-strava {
-  color: #fc5200;
+  color: var(--highlight-strava);
 }
 
 h2 a {
   all: unset;
   cursor: pointer;
   text-decoration: none;
+  color: inherit;
 }
 
-/* ---------------------------
+/* ---------------------------------
    Utility Classes
----------------------------- */
+---------------------------------- */
 .center {
   text-align: center;
 }
@@ -145,9 +167,9 @@ h2 a {
   padding-top: 2rem;
 }
 
-/* ---------------------------
+/* ---------------------------------
    Header & Footer
----------------------------- */
+---------------------------------- */
 .site-header {
   text-align: center;
   margin-top: 3rem;
@@ -158,14 +180,14 @@ h2 a {
   font-size: 2rem;
   font-weight: normal;
   text-decoration: none;
-  color: #111;
+  color: var(--text);
 }
 
 footer {
   font-size: 0.8rem;
   text-align: center;
-  color: #888;
-  border-top: 1px solid #eee;
+  color: var(--footer);
+  border-top: 1px solid var(--footer-border);
   background-color: inherit;
 }
 
@@ -173,48 +195,16 @@ footer p {
   text-align: center;
 }
 
-/* ---------------------------
-   Dark Mode
----------------------------- */
-body.dark-mode {
-  background-color: #1f1e25;
-  color: #fdfdfd;
-}
-
-html.dark-mode {
-  background-color: #1f1e25;
-}
-
-body.dark-mode .page {
-  background-color: #1f1e25;
-}
-
-body.dark-mode a {
-  color: #6dc2ff;
-}
-
-body.dark-mode h2 a {
-  color: inherit;
-}
-
-body.dark-mode footer {
-  color: #aaa !important;
-  border-top: 1px solid !important;
-  background-color: #1f1e25;
-}
-
-/* ---------------------------
-   Dark Mode Switch
----------------------------- */
+/* ---------------------------------
+   Dark Mode Toggle
+---------------------------------- */
 .theme-toggle {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   z-index: 999;
-
   display: flex;
   align-items: center;
   gap: 0.2rem;
-  font-size: 1rem;
 }
