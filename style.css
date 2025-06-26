@@ -208,3 +208,28 @@ footer p {
   align-items: center;
   gap: 0.2rem;
 }
+
+.screenshot-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.screenshot-gallery figure {
+  margin: 0;
+  text-align: center;
+}
+
+.screenshot-gallery img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+}
+
+.screenshot-gallery figcaption {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+}
